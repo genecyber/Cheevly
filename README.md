@@ -1,5 +1,5 @@
 # Cheevly
-##Introduction
+## Introduction
 Cheevly is an open-source virtual assistant platform that helps you work smarter and achieve more. Backed by large language models like OpenAI's GPT, Cheevly is able to quickly learn and perform tasks with the tools, processes and software that you use daily. This .NET Core library provides everything you need to configure, extend and deploy Cheevly for any environment.
 
 ## Why?
@@ -37,7 +37,7 @@ var agent = new AgentBuilder()
 Console.WriteLine(await agent.PromptAsync("what time is it?"));
 ```
 
-#### Intent routing
+### Intent routing
 ```C#
 var agent = new AgentBuilder()
     .UseOpenAI("API KEY")
