@@ -22,11 +22,6 @@ We offer a variety of skills right out of the box that you can instantly activat
  - *Stable Diffusion:* Generate or edit images
  - *Code:* Execute or control .NET or Javascript code
 
-##Cheevly Pro integration
-Cheevly Pro enables you to 'teach by doing'. By narrating recorded videos of you performing tasks, Cheevly quickly learns to understand your language and the actions being performed.
-
-##Roadmap
-
 ### Getting Started
 ```C#
 var agent = new AgentBuilder()
@@ -54,3 +49,14 @@ Assert.AreEqual(someObject.Thing, false);
 await agent.PromptAsync("sweet, now turn it back on");
 Assert.AreEqual(someObject.Thing, true);
 ```
+
+## Roadmap
+
+#### Expanded admin portal
+Logging, reports, reminders
+
+#### Javascript agent
+Deploy to Node.js or a web front-end
+
+#### Cheevly Pro integration
+Cheevly Pro enables you to 'teach by doing'. By narrating recorded videos of you performing tasks, Cheevly quickly learns to understand your language and the actions being performed.
