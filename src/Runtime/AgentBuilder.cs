@@ -2,6 +2,7 @@
 using Cheevly.Intent;
 using Cheevly.LanguageProviders.OpenAI;
 using Cheevly.Prompts;
+using Cheevly.Skills;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -26,6 +27,11 @@ namespace Cheevly.Runtime {
             Use<IntentRoutingConfiguration>((provider) => {
                 var configuration = new IntentRoutingConfiguration();
                 configure(configuration);
+
+                // Todo: move into the skill system
+                configuration.Use(new TimeSkills())
+                    .Route("what's the current time?", clock => clock.GetTime());
+
                 return configuration;
             });
 
