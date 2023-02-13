@@ -31,6 +31,7 @@ Cheevly Pro enables you to 'teach by doing'. By narrating recorded videos of you
 ```C#
 var agent = new AgentBuilder()
     .UseOpenAI("API KEY")
+    .UseIntentRouting()
     .Build();
 
 Console.WriteLine(await agent.PromptAsync("what time is it?"));
@@ -51,4 +52,5 @@ var agent = new AgentBuilder()
 await agent.PromptAsync("can you go turn the thing off");
 Assert.AreEqual(someObject.Thing, false);
 await agent.PromptAsync("sweet, now turn it back on");
+Assert.AreEqual(someObject.Thing, true);
 ```

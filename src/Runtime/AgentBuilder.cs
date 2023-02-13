@@ -20,13 +20,16 @@ namespace Cheevly.Runtime {
             return this;
         }
 
-        public AgentBuilder UseIntentRouting(Action<IntentRoutingConfiguration> configure) {
+        public AgentBuilder UseIntentRouting(Action<IntentRoutingConfiguration> configure = null) {
 
             Use<IntentDispatcher>(ServiceLifetime.Scoped);
 
             Use<IntentRoutingConfiguration>((provider) => {
                 var configuration = new IntentRoutingConfiguration();
-                configure(configuration);
+
+                if(configure != null) {
+                    configure(configuration);
+                }
 
                 // Todo: move into the skill system
                 configuration.Use(new TimeSkills())
